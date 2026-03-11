@@ -3,25 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:gravity="center"
     android:padding="32dp"
-    android:gravity="center">
+    android:background="#FFFFFF">
 
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Имя не задано"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
         android:id="@+id/etInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="none"
-        android:hint="Введите текст"
+        android:hint="@string/input_hint"
         android:inputType="text"
-        android:minHeight="50dp"
-        android:textColor="#000000" />
+        android:minHeight="50dp"/>
 
     <Button
         android:id="@+id/btnGo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="На второй экран" />
+        android:text="@string/btn_edit" />
+
+    <Button
+        android:id="@+id/btnWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#607D8B"
+        android:text="@string/btn_web" />
 </LinearLayout>

@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Lab3 Lifecycle</string>
-    <string name="input_hint">Введите текст</string>
-    <string name="btn_send">Перейти ко второй активности</string>
-    <string name="label_received">Полученные данные: %1$s</string>
+    <string name="app_name">Lab 4: Intents</string>
+    <string name="input_hint">Введите имя пользователя</string>
+    <string name="btn_edit">Редактировать во 2-й активности</string>
+    <string name="btn_web">Открыть документацию (Неявный Intent)</string>
+    <string name="label_status">Текущее имя: %1$s</string>
+    <string name="save_btn">Сохранить и вернуться</string>
 </resources>

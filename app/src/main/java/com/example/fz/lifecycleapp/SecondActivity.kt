@@ -1,8 +1,11 @@
 package com.example.fz.lifecycleapp
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 class SecondActivity : AppCompatActivity() {
@@ -12,19 +15,20 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        Log.d(tag, "onCreate called")
-        val tvOutput = findViewById<TextView>(R.id.tvOutput)
-        val receivedText = intent.getStringExtra("user_input")
-        if (receivedText != null) {
-            tvOutput.text = receivedText
-        } else {
-            tvOutput.text = "Данные не получены"
+
+        val etEdit = findViewById<EditText>(R.id.etEdit)
+        val btnSave = findViewById<Button>(R.id.btnSave)
+
+        val incomingText = intent.getStringExtra("user_data")
+        etEdit.setText(incomingText)
+
+        btnSave.setOnClickListener {
+            val resultIntent = Intent()
+            resultIntent.putExtra("return_val", etEdit.text.toString())
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
         }
     }
 
-    override fun onStart() { super.onStart(); Log.d(tag, "onStart called") }
-    override fun onResume() { super.onResume(); Log.d(tag, "onResume called") }
-    override fun onPause() { super.onPause(); Log.d(tag, "onPause called") }
-    override fun onStop() { super.onStop(); Log.d(tag, "onStop called") }
-    override fun onDestroy() { super.onDestroy(); Log.d(tag, "onDestroy called") }
+    override fun onStart() { super.onStart(); Log.d(tag, "onStart") }
 }
