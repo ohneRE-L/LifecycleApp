@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Lab 4: Intents</string>
-    <string name="input_hint">Введите имя пользователя</string>
-    <string name="btn_edit">Редактировать во 2-й активности</string>
-    <string name="btn_web">Открыть документацию (Неявный Intent)</string>
-    <string name="label_status">Текущее имя: %1$s</string>
-    <string name="save_btn">Сохранить и вернуться</string>
+    <string name="app_name" translatable="false">Lab 5</string>
+    <string name="input_hint" translatable="false">Введите имя пользователя</string>
+    <string name="btn_edit" translatable="false">Редактировать во 2-й активности</string>
+    <string name="btn_web" translatable="false">Открыть документацию (Неявный Intent)</string>
+    <string name="label_status" translatable="false">Текущее имя: %1$s</string>
+    <string name="save_btn" translatable="false">Сохранить и вернуться</string>
+    <string name="someText">Какой-нибудь текст</string>
+    <string name="someTextLand" translatable="false">Какой-то текст но уже в горизонтальном формате</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lab 5</string>
+    <string name="input_hint">Enter user name</string>
+    <string name="btn_edit">edit in second activity</string>
+    <string name="btn_web">Open documentation</string>
+    <string name="label_status">Ur name: %1$s</string>
+    <string name="save_btn">Save and return</string>
+    <string name="someText">Some Text</string>
+    <string name="someTextLand">Some text in horizontal format</string>
+</resources>
