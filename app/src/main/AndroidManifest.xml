@@ -16,19 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifecycleApp">
 
-        <!-- СЕРВИСЫ (внутри application, отдельно от activity) -->
         <service
             android:name=".MyService"
             android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="specialUse" /> <!-- Добавлен тип для новых Android -->
+            android:foregroundServiceType="specialUse" />
 
         <service
             android:name=".BoundService"
             android:enabled="true"
             android:exported="false" />
 
-        <!-- АКТИВНОСТИ -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

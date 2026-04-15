@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Lab 6</string>
+    <string name="app_name" translatable="false">Lab 7</string>
     <string name="input_hint" translatable="false">Введите имя пользователя</string>
     <string name="btn_edit" translatable="false">Редактировать во 2-й активности</string>
     <string name="btn_web" translatable="false">Открыть документацию (Неявный Intent)</string>
