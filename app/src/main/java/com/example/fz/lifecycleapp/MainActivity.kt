@@ -1,18 +1,15 @@
 package com.example.fz.lifecycleapp
 
 import android.Manifest
-import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.ComponentName
-import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -21,18 +18,19 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
+import androidx.core.content.edit
+import androidx.core.net.toUri
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 class MainActivity : AppCompatActivity() {
 
-    private val tag = "MainActivity"
     private lateinit var tvStatus: TextView
     private lateinit var etInput: EditText
     private var boundService: BoundService? = null
     private var isBound = false
 
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
+        if (result.resultCode == RESULT_OK) {
             val returnedData = result.data?.getStringExtra("return_val")
             tvStatus.text = getString(R.string.label_status, returnedData)
             etInput.setText(returnedData)
@@ -55,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val prefs = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences("settings", MODE_PRIVATE)
         val isDarkModeSaved = prefs.getBoolean("dark_mode", false)
         AppCompatDelegate.setDefaultNightMode(
             if (isDarkModeSaved) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
@@ -75,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         themeSwitch.isChecked = isDarkModeSaved
         themeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit().putBoolean("dark_mode", isChecked).apply()
+            prefs.edit { putBoolean("dark_mode", isChecked) }
             AppCompatDelegate.setDefaultNightMode(
                 if (isChecked) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
             )
@@ -89,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnWeb.setOnClickListener {
-            val webpage: Uri = Uri.parse("https://developer.android.com")
+            val webpage: Uri = "https://developer.android.com".toUri()
             startActivity(Intent(Intent.ACTION_VIEW, webpage))
         }
 
@@ -105,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 
         btnWeb.setOnLongClickListener {
             val intent = Intent(this, BoundService::class.java)
-            bindService(intent, connection, Context.BIND_AUTO_CREATE)
+            bindService(intent, connection, BIND_AUTO_CREATE)
             true
         }
     }

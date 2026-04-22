@@ -1,6 +1,5 @@
 package com.example.fz.lifecycleapp
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -25,7 +24,7 @@ class SecondActivity : AppCompatActivity() {
         btnSave.setOnClickListener {
             val resultIntent = Intent()
             resultIntent.putExtra("return_val", etEdit.text.toString())
-            setResult(Activity.RESULT_OK, resultIntent)
+            setResult(RESULT_OK, resultIntent)
             finish()
         }
     }
