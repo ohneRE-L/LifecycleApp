@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name" translatable="false">Lab 7</string>
+    <string name="app_name" translatable="false">Lab 9: Cat Gallery</string>
+    <string name="prev_button">Prev</string>
+    <string name="next_button">Next</string>
+    <string name="cat_image_desc">Cat Image</string>
+    <string name="network_error">Network Error</string>
+    <string name="cache_error">Not in cache</string>
     <string name="input_hint" translatable="false">Введите имя пользователя</string>
     <string name="btn_edit" translatable="false">Редактировать во 2-й активности</string>
     <string name="btn_web" translatable="false">Открыть документацию (Неявный Intent)</string>

@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:gravity="center"
-    android:padding="32dp"
-    android:background="?android:attr/windowBackground">
+    android:padding="16dp">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/ic_info"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@null" />
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/tvStatus"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/cat_image_desc"
+            android:scaleType="centerCrop" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/someText"
-        android:textSize="18sp" android:textColor="?android:attr/textColorPrimary" /> <!-- Адаптивный цвет текста -->
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        style="?android:attr/buttonBarStyle">
 
-    <EditText
-        android:id="@+id/etInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/input_hint"
-        android:inputType="text"
-        android:minHeight="50dp"
-        android:textColor="?android:attr/textColorPrimary" />
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button"
+            style="?android:attr/buttonBarButtonStyle" />
 
-    <Button
-        android:id="@+id/btnGo"
-        style="@style/MyCustomButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_edit" />
-
-    <Button
-        android:id="@+id/btnWeb"
-        style="@style/MyCustomButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#607D8B"
-        android:text="@string/btn_web" />
+        <Button
+            android:id="@+id/buttonPrev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/prev_button"
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
 </LinearLayout>
